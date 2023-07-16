@@ -9,58 +9,48 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@500;600;700&display=swap" rel="stylesheet">
-
-  <style>
-    #btn1:hover {cursor: pointer;}
-    #btn1{display: flex; align-items: center; justify-content: center; margin: 10px 202px; padding: 10px; font-family: 'Josefin Sans', sans-serif ; font-size: 150%; max-width: 30vh;background-color: #AEFEFF; border: solid 2px #072227 ;border-radius: 10px;}
-  </style>
+  <!-- Add the Tailwind CSS library -->
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
 </head>
-<body style=" background-color: #AEFEFF; font-family: 'Josefin Sans', sans-serif ;">
-  <div
-    style=" margin: auto; padding: auto; align-items: center; color: #072227; justify-content: center; border: solid 3px #072227; height: 97vh; width: 97vw;">
-    <div
-      style="display:flex; justify-content: center; align-items: center; padding: 2rem; margin: auto; font-family: 'Josefin Sans', sans-serif ; font-size: 400%; justify-content: center; align-items: center; ">
-      SECURE FILE SHARING SERVICE</div>
-    <% if (locals.fileLink !=null) { %>
-      <div style="display: flex; justify-content: center; align-items: center; padding: 0.5rem; margin: auto; max-width: 85vw; margin: 0 auto;font-family: 'Josefin Sans', sans-serif ; font-size: 150%;">
-        Your file is uploaded :) &nbsp<a href="<%= locals.fileLink %>">Click to Download</a>
-      </div>
-        <div href="<%= locals.fileLink %>" style="display: flex; justify-content: center; align-items: center; padding: 0.5rem;margin: auto; max-width: 85vw; margin: 0 auto;font-family: 'Josefin Sans', sans-serif; font-size: 150%;">Link to share anywhere : <%= locals.fileLink %>
-      </div>
-      <% } %>
-        <form action="/upload" method="post"
-          style="display: grid; align-items: center; justify-content: center;"
-          enctype="multipart/form-data">
-          <label for="file" style=" display: flex; margin: 10px; padding: 10px; align-items: center; justify-content: center; padding: 2px; font-size: 250%; color: #072227; font-family: 'Josefin Sans', sans-serif ; border-radius: 10px; border: dashed 2px #072227; width: 600px; max-width: 40vw; height: 300px; max-height: 35vh;">Click to Upload your Files</label>
-          <input type="file" id="file" name="file" required style=" display: none;"/>
-          <input type="password" id="password" name="password" placeholder="Password" style="display: flex; align-items: center; justify-content: center; margin: 10px 190px; padding: 10px; font-family: 'Josefin Sans', sans-serif ; font-size: 150%; max-width: 30vh; background-color: #AEFEFF; border: solid 2px #072227 ;border-radius: 10px;"  />
-          <button id="btn1" style="font-family: 'Josefin Sans', sans-serif ;" type="submit" >SHARE</button>
-        </form>
-        <% if (locals.fileLink !=null) { %> 
-          <div
-          style="justify-content: center; align-items: center; padding-top: 5.5% ;  padding-left: 45%; margin: auto; font-family: 'Josefin Sans', sans-serif ; font-size: 100%; justify-content: center; align-items: center;">
-          Made with
-          <svg class="heart" viewBox="0 0 32 29.6" style="fill: red; position: relative; top: 5px; width: 20px;">
-            <path
-              d="M23.6,0c-3.4,0-6.3,2.7-7.6,5.6C14.7,2.7,11.8,0,8.4,0C3.8,0,0,3.8,0,8.4c0,9.4,9.5,11.9,16,21.2c6.1-9.3,16-12.1,16-21.2C32,3.8,28.2,0,23.6,0z" />
-          </svg>
-          by <a href="https://github.com/jals413" target="_blank" style="text-decoration: none; color: blueviolet;">Jal
-            Thakor</a>
-        </div>
-        <% } %>
 
-        <% if (locals.fileLink ==null) { %> 
-        <div
-          style="justify-content: center; align-items: center; padding-top: 11% ;  padding-left: 45%; margin: auto; font-family: 'Josefin Sans', sans-serif ; font-size: 100%; justify-content: center; align-items: center;">
-          Made with
-          <svg class="heart" viewBox="0 0 32 29.6" style="fill: red; position: relative; top: 5px; width: 20px;">
-            <path
-              d="M23.6,0c-3.4,0-6.3,2.7-7.6,5.6C14.7,2.7,11.8,0,8.4,0C3.8,0,0,3.8,0,8.4c0,9.4,9.5,11.9,16,21.2c6.1-9.3,16-12.1,16-21.2C32,3.8,28.2,0,23.6,0z" />
-          </svg>
-          by <a href="https://github.com/jals413" target="_blank" style="text-decoration: none; color: blueviolet;">Jal
-            Thakor</a>
-        </div>
-        <% } %>
+<body class="flex flex-col min-h-screen bg-gray-800 text-white">
+  <div class="container flex-1 mx-auto px-4 py-8">
+    <div class="header text-center">
+      <h1 class="text-6xl font-bold mb-4">
+        UltraShare
+      </h1>
+      <p class="text-xl font-semibold">
+        Unlimited File Size Transfer, Ultra-Secure and Effortless
+      </p>
+    </div>
+
+    <% if (locals.fileLink !=null) { %>
+      <div class="message text-center">
+        Your file is uploaded :) &nbsp;<a href="<%= locals.fileLink %>" class="underline">Click to Download</a>
+      </div>
+      <div class="message text-center">
+        Link to share anywhere: <%= locals.fileLink %>
+      </div>
+    <% } %>
+
+    <form action="/upload" method="post" class="file-upload-container grid items-center justify-center mt-8">
+      <label for="file" class="file-label text-center">
+        Click to Upload your Files
+      </label>
+      <input type="file" id="file" name="file" required class="file-input hidden" />
+      <input type="password" id="password" name="password" placeholder="Password" class="password-input mt-4 px-4 py-2 rounded-lg border border-gray-400 bg-transparent text-white placeholder-white::placeholder" />
+      <button id="btn1" type="submit" class="mt-4 py-2 px-4 bg-blue-500 hover:bg-blue-600 text-white rounded-lg">
+        SHARE
+      </button>
+    </form>
+  </div>
+
+  <div class="footer text-sm mt-8 mb-4 text-center">
+    Made with
+    <svg class="heart inline-block h-4 w-4 text-red-600" viewBox="0 0 32 29.6">
+      <path d="M23.6,0c-3.4,0-6.3,2.7-7.6,5.6C14.7,2.7,11.8,0,8.4,0C3.8,0,0,3.8,0,8.4c0,9.4,9.5,11.9,16,21.2c6.1-9.3,16-12.1,16-21.2C32,3.8,28.2,0,23.6,0z" />
+    </svg>
+    by <a href="https://github.com/jals413" target="_blank" class="link">Jal Thakor</a>
   </div>
 </body>
 
