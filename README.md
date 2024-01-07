@@ -1,21 +1,42 @@
 
 # Encrypted File Sharing Service
 
-## About
-This project is aimed at providing a secure way to share files. (Note: The original repository lacks a detailed description. This is an inferred description based on the project title.)
+## Table of Contents
+1. [Description](#description)
+2. [Features](#features)
+3. [How to Use](#how-to-use)
+4. [Technologies Used](#technologies-used)
+5. [Setup Locally](#setup-locally)
+6. [How to Contribute](#how-to-contribute)
+7. [Links](#links)
+8. [License](#license)
 
-## Languages and Technologies
-- EJS: 75.6%
-- JavaScript: 24.4%
+## Description
+The Encrypted File Sharing Service is a peer-to-peer file sharing application that prioritizes secure data transfer. It allows users to share files with end-to-end encryption, ensuring that shared data is accessible only to intended recipients.
 
-## Setup and Local Development
-To set up this project locally, follow these steps:
+## Features
+- **Password Protection:** Users can set passwords for their files, adding an extra layer of security.
+- **Encryption:** Utilizes bcrypt for robust encryption, safeguarding file contents during transfer.
+- **User-Friendly Interface:** Designed for ease of use, ensuring a smooth file-sharing experience.
+
+## How to Use
+1. **Uploading a File:** Choose a file to share, set a password for encryption, and upload it to the service.
+2. **Sharing:** Once uploaded, a unique link is generated which can be shared with the recipient.
+3. **Downloading:** The recipient uses the link to download the file. The correct password must be entered to access and decrypt the file.
+
+## Technologies Used
+- **Frontend:** EJS (75.6%)
+- **Backend:** JavaScript (24.4%)
+- **Encryption:** bcrypt for password hashing and file encryption.
+
+## Setup Locally
+To set up the project on your local machine, follow these steps:
 
 1. Clone the repository:
    ```
    git clone https://github.com/jals413/encrypted-file-sharing-service.git
    ```
-2. Navigate to the project directory:
+2. Navigate to the directory:
    ```
    cd encrypted-file-sharing-service
    ```
@@ -27,24 +48,25 @@ To set up this project locally, follow these steps:
    ```
    npm start
    ```
+5. Access the application via `http://localhost:3000` (or the configured port).
 
-## Contributing
-We welcome contributions! If you have a feature request or bug report, please follow these steps to contribute:
+## How to Contribute
+We welcome contributions of all forms. Here's how you can contribute:
 
-1. Fork the repository.
-2. Create a new branch (`git checkout -b feature-branch`).
-3. Make your changes.
-4. Commit your changes (`git commit -am 'Add some feature'`).
-5. Push to the branch (`git push origin feature-branch`).
-6. Create a new Pull Request.
+1. **Reporting Issues:** Use the [Issue Tracker](https://github.com/jals413/encrypted-file-sharing-service/issues) to report bugs or suggest enhancements.
+2. **Submitting Pull Requests:** For code contributions, please follow these steps:
+   - Fork the repository.
+   - Create a new branch (`git checkout -b my-new-feature`).
+   - Make your changes and test them.
+   - Commit your changes (`git commit -am 'Add some feature'`).
+   - Push the branch (`git push origin my-new-feature`).
+   - Open a pull request.
 
-Please make sure to update tests as appropriate.
-
-## Useful Links
-- [Contributors](https://github.com/jals413/encrypted-file-sharing-service/graphs/contributors)
-- [Commit Activity](https://github.com/jals413/encrypted-file-sharing-service/graphs/commit-activity)
+## Links
+- [GitHub Repository](https://github.com/jals413/encrypted-file-sharing-service)
 - [Issues](https://github.com/jals413/encrypted-file-sharing-service/issues)
 - [Pull Requests](https://github.com/jals413/encrypted-file-sharing-service/pulls)
+- [Commit Activity](https://github.com/jals413/encrypted-file-sharing-service/graphs/commit-activity)
 
 ## License
-This project is licensed under the MIT License - see the LICENSE.md file for details.
+This project is made available under the MIT License. For more details, see the [LICENSE.md](LICENSE.md) file.
