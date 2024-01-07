@@ -25,9 +25,13 @@ The Encrypted File Sharing Service is a peer-to-peer file sharing application th
 3. **Downloading:** The recipient uses the link to download the file. The correct password must be entered to access and decrypt the file.
 
 ## Technologies Used
-- **Frontend:** EJS (75.6%)
-- **Backend:** JavaScript (24.4%)
-- **Encryption:** bcrypt for password hashing and file encryption.
+- **EJS:** A templating language used to generate HTML with plain JavaScript. It's utilized for creating dynamic views in the application.
+- **Express:** A fast, unopinionated, minimalist web framework for Node.js, used for handling server-side logic and routing.
+- **Mongoose:** A MongoDB object modeling tool designed to work in an asynchronous environment. It's used for database operations.
+- **Multer:** A Node.js middleware for handling `multipart/form-data`, primarily used for uploading files.
+- **Bcrypt:** A library to help hash passwords, providing a secure way to store and compare user passwords.
+- **Dotenv:** A zero-dependency module that loads environment variables from a `.env` file into `process.env`, making it easier to manage sensitive configuration options.
+
 
 ## Setup Locally
 To set up the project on your local machine, follow these steps:
