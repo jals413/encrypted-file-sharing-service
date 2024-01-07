@@ -66,6 +66,9 @@ We welcome contributions of all forms. Here's how you can contribute:
    - Push the branch (`git push origin my-new-feature`).
    - Open a pull request.
 
+Thanks to the contributers ❤️
+<img src="https://opencollective.com/encrypted-file-sharing-service/contributors.svg?width=890&button=false" />
+
 ## Links
 - [GitHub Repository](https://github.com/jals413/encrypted-file-sharing-service)
 - [Issues](https://github.com/jals413/encrypted-file-sharing-service/issues)
